@@ -1,7 +1,19 @@
 .container {
   background-color: blueviolet;
+  max-width: 650px;
+  font-family: "EB Garamond", serif;
+}
+#dropbox {
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 h1,
-h2 {
+h2,
+footer {
   text-align: center;
+}
+
+.index-card {
+  display: block;
+  margin: 0 auto;
 }
