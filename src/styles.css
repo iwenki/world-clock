@@ -23,6 +23,8 @@ footer {
 }
 .city-name{
   background: rgba(106, 114, 122, 0.8);
+  font-size: 25px;
+  text-shadow: 5px 5px 10px rgba(238, 236, 238, 0.4);
 }
 .index-card {
   display: block;
@@ -30,6 +32,13 @@ footer {
   box-shadow: 10px 10px 12px rgba(0, 0, 0, 0.3);
   background: rgba(174, 100, 100, 0.8);
   border:none;
+}
+.time{
+  font-weight: 700;
+  font-size: 30px;
+}
+.date{
+  font-size:20px;
 }
 footer{
   color: #ffffff;
