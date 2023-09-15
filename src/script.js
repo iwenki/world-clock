@@ -44,9 +44,9 @@ function updateTimes() {
     kenyaDateElement.innerHTML = kenyaTime.format("dddd, MMMM Do, YYYY");
   }
 }
-
 function updateCity(event) {
   let timeZone = event.target.value;
+  if(timeZone==="local"){timeZone=moment.tz.guess();}
   let cityName = timeZone.replace("_"," ").split("/")[1];
   let cityTime = moment().tz(timeZone);
   let cities = document.querySelector("#indexCities");
@@ -74,7 +74,8 @@ function updateCity(event) {
             </div>
           </div>
         </div>`;
-  } else {
+  } 
+  else {
     cities.innerHTML = `<div
           class="card text-bg mb-3 index-card"
           style="max-width: 36rem"
