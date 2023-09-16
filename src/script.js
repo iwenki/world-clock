@@ -43,11 +43,15 @@ function updateTimes() {
     kenyaTimeElement.innerHTML = kenyaTime.format("hh:mm:ss:SSS a");
     kenyaDateElement.innerHTML = kenyaTime.format("dddd, MMMM Do, YYYY");
   }
+  activateApi();
 }
 function updateCity(event) {
+  function individualCities(){
   let timeZone = event.target.value;
-  if(timeZone==="local"){timeZone=moment.tz.guess();}
-  let cityName = timeZone.replace("_"," ").split("/")[1];
+  if (timeZone === "local") {
+    timeZone = moment.tz.guess();
+  }
+  let cityName = timeZone.replace("_", " ").split("/")[1];
   let cityTime = moment().tz(timeZone);
   let cities = document.querySelector("#indexCities");
   if (timeZone.length > 0) {
@@ -65,142 +69,35 @@ function updateCity(event) {
                 )}</p>
               </div>
               <div class="col">
-                Weather
-                <p class="card-text">
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
+                <span class="weather-icon"></span>
+                <div class="temperature"></div>
+                <p class="card-text description">
                 </p>
               </div>
             </div>
           </div>
         </div>`;
   } 
-  else {
-    cities.innerHTML = `<div
-          class="card text-bg mb-3 index-card"
-          style="max-width: 36rem"
-          id="spain"
-        >
-          <div class="card-header city-name">Barcelona, Spain</div>
-          <div class="card-body">
-            <div class="row">
-              <div class="col">
-                <span class="time"></span>
-                <p class="card-text date"></p>
-              </div>
-              <div class="col">
-                Weather
-                <p class="card-text">
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div
-          class="card text-bg mb-3 index-card"
-          style="max-width: 36rem"
-          id="usa"
-        >
-          <div class="card-header city-name">
-            Houston, United States of America
-          </div>
-          <div class="card-body">
-            <div class="row">
-              <div class="col">
-                <span class="time"></span>
-                <p class="card-text date">
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
-                </p>
-              </div>
-              <div class="col">
-                Weather
-                <p class="card-text">
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div
-          class="card text-bg mb-3 index-card"
-          style="max-width: 36rem"
-          id="guatemala"
-        >
-          <div class="card-header city-name">Guatemala City, Guatemala</div>
-          <div class="card-body">
-            <div class="row">
-              <div class="col">
-                <span class="time"></span>
-                <p class="card-text date">
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
-                </p>
-              </div>
-              <div class="col">
-                Weather
-                <p class="card-text">
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div
-          class="card text-bg mb-3 index-card"
-          style="max-width: 36rem"
-          id="southKorea"
-        >
-          <div class="card-header city-name">Seoul, South Korea</div>
-          <div class="card-body">
-            <div class="row">
-              <div class="col">
-                <span class="time"></span>
-                <p class="card-text date">
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
-                </p>
-              </div>
-              <div class="col">
-                Weather
-                <p class="card-text">
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div
-          class="card text-bg mb-3 index-card"
-          style="max-width: 36rem"
-          id="kenya"
-        >
-          <div class="card-header city-name">Nairobi, Kenya</div>
-          <div class="card-body">
-            <div class="row">
-              <div class="col">
-                <span class="time"></span>
-                <p class="card-text date">
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
-                </p>
-              </div>
-              <div class="col">
-                Weather
-                <p class="card-text">
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>`;
+}
+setInterval(individualCities,1);
+individualCities();
   }
+
+
+function activateApi() {
+  let cityName = document.querySelector(".justCityName");
+  const apiKey = "cbc90ba0a21t28a990f44b7f6f3ea68o";
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${cityName}&key=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(handleResponse);
+}
+function handleResponse(response) {
+  let temperature = document.querySelector(".temperature");
+  let description = document.querySelector(".description");
+  let iconElement = document.querySelector(".weather-icon");
+  let celsiusTemp = response.data.temperature.current;
+  iconElement.innerHTML = response.data.condition.icon;
+  temperature.innerHTML = Math.round(celsiusTemp);
+  description.innerHTML = response.data.condition.description;
 }
 
 setInterval(updateTimes, 1);

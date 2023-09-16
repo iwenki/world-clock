@@ -21,8 +21,10 @@
       src="https://kit.fontawesome.com/2ecceee7a9.js"
       crossorigin="anonymous"
     ></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.43/moment-timezone-with-data-1970-2030.min.js"></script>
+    
   </head>
   <body>
     <div class="container">
@@ -33,7 +35,7 @@
         aria-label="Default select example"
         id="dropbox"
       >
-        <option selected value="">Choose a city</option>
+        <option selected value=""><a href="/"> Choose a city</a></option>
         <option value="local">📌Current loction</option>
         <option value="America/Sao_Paulo">Sao Paulo, Brazil</option>
         <option value="Asia/Kathmandu">Kathmandu, Nepal</option>
@@ -47,7 +49,7 @@
           style="max-width: 36rem"
           id="spain"
         >
-          <div class="card-header city-name">Barcelona, Spain</div>
+          <div class="card-header city-name"><span class="justCityName">Barcelona</span>, Spain</div>
           <div class="card-body">
             <div class="row">
               <div class="col">
@@ -55,11 +57,9 @@
                 <p class="card-text date"></p>
               </div>
               <div class="col">
-                Weather
-                <p class="card-text">
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
-                </p>
+                <span class="weather-icon"></span>
+                <div class="temperature">C|F</div>
+                <p class="card-text description">Cloudy</p>
               </div>
             </div>
           </div>
@@ -69,24 +69,18 @@
           style="max-width: 36rem"
           id="usa"
         >
-          <div class="card-header city-name">
-            Houston, United States of America
+          <div class="card-header city-name"><span class="justCityName">Houston</span>, United States of America 
           </div>
           <div class="card-body">
             <div class="row">
               <div class="col">
                 <span class="time"></span>
-                <p class="card-text date">
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
-                </p>
+                <p class="card-text date"></p>
               </div>
               <div class="col">
-                Weather
-                <p class="card-text">
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
-                </p>
+                <span class="weather-icon"></span>
+                <div class="temperature"></div>
+                <p class="card-text description"></p>
               </div>
             </div>
           </div>
@@ -96,22 +90,17 @@
           style="max-width: 36rem"
           id="guatemala"
         >
-          <div class="card-header city-name">Guatemala City, Guatemala</div>
+          <div class="card-header city-name"><span class="justCityName">Guatemala City</span>, Guatemala</div>
           <div class="card-body">
             <div class="row">
               <div class="col">
                 <span class="time"></span>
-                <p class="card-text date">
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
-                </p>
+                <p class="card-text date"></p>
               </div>
               <div class="col">
-                Weather
-                <p class="card-text">
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
-                </p>
+                <span class="weather-icon"></span>
+                <div class="temperature"></div>
+                <p class="card-text description"></p>
               </div>
             </div>
           </div>
@@ -121,22 +110,17 @@
           style="max-width: 36rem"
           id="southKorea"
         >
-          <div class="card-header city-name">Seoul, South Korea</div>
+          <div class="card-header city-name"><span class="justCityName">Seoul</span>, South Korea</div>
           <div class="card-body">
             <div class="row">
               <div class="col">
                 <span class="time"></span>
-                <p class="card-text date">
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
-                </p>
+                <p class="card-text date"></p>
               </div>
               <div class="col">
-                Weather
-                <p class="card-text">
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
-                </p>
+                <span class="weather-icon"></span>
+                <div class="temperature"></div>
+                <p class="card-text description"></p>
               </div>
             </div>
           </div>
@@ -146,22 +130,17 @@
           style="max-width: 36rem"
           id="kenya"
         >
-          <div class="card-header city-name">Nairobi, Kenya</div>
+          <div class="card-header city-name"><span class="justCityName">Nairobi</span>, Kenya</div>
           <div class="card-body">
             <div class="row">
               <div class="col">
                 <span class="time"></span>
-                <p class="card-text date">
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
-                </p>
+                <p class="card-text date"></p>
               </div>
               <div class="col">
-                Weather
-                <p class="card-text">
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
-                </p>
+                <span class="weather-icon"></span>
+                <div class="temperature"></div>
+                <p class="card-text description"></p>
               </div>
             </div>
           </div>
