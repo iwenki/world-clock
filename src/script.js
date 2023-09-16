@@ -46,16 +46,16 @@ function updateTimes() {
   activateApi();
 }
 function updateCity(event) {
-  function individualCities(){
-  let timeZone = event.target.value;
-  if (timeZone === "local") {
-    timeZone = moment.tz.guess();
-  }
-  let cityName = timeZone.replace("_", " ").split("/")[1];
-  let cityTime = moment().tz(timeZone);
-  let cities = document.querySelector("#indexCities");
-  if (timeZone.length > 0) {
-    cities.innerHTML = `<div
+  function individualCities() {
+    let timeZone = event.target.value;
+    if (timeZone === "local") {
+      timeZone = moment.tz.guess();
+    }
+    let cityName = timeZone.replace("_", " ").split("/")[1];
+    let cityTime = moment().tz(timeZone);
+    let cities = document.querySelector("#indexCities");
+    if (timeZone.length > 0) {
+      cities.innerHTML = `<div
           class="card text-bg mb-3 index-card"
           style="max-width: 36rem"
         >
@@ -76,13 +76,12 @@ function updateCity(event) {
               </div>
             </div>
           </div>
-        </div>`;
-  } 
-}
-setInterval(individualCities,1);
-individualCities();
+        </div><a href="/">Return to main</a>`;
+    }
   }
-
+  setInterval(individualCities, 1);
+  individualCities();
+}
 
 function activateApi() {
   let cityName = document.querySelector(".justCityName");
