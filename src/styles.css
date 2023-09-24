@@ -49,11 +49,10 @@ small{
   bottom: 10px; left: 70px;
 }
 footer{
-  color: #ffffff;
-  margin-bottom: 20px;
+  color: #090505;
 }
 .resume, .git, .pexels, .countryFlag{
-  color: rgb(233 194 212);
+  color: #164f1c;
   text-decoration: none;
 }
 .resume:hover, .git:hover, .pexels:hover, .countryFlag:hover{
