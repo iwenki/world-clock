@@ -40,14 +40,22 @@ footer {
 .date{
   font-size:20px;
 }
+small{
+  font-size:18px;
+}
+.flags{
+  height: 100px;
+  position: relative;
+  bottom: 10px; left: 70px;
+}
 footer{
   color: #ffffff;
   margin-bottom: 20px;
 }
-.resume, .git, .pexels{
+.resume, .git, .pexels, .countryFlag{
   color: rgb(233 194 212);
   text-decoration: none;
 }
-.resume:hover, .git:hover, .pexels:hover{
+.resume:hover, .git:hover, .pexels:hover, .countryFlag:hover{
   text-decoration: underline;
 }
