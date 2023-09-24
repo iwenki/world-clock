@@ -43,10 +43,13 @@ footer {
 small{
   font-size:18px;
 }
+.countryinfo{
+  text-align: center;
+}
 .flags{
   height: 100px;
   position: relative;
-  bottom: 10px; left: 70px;
+  bottom: 10px;
 }
 footer{
   color: #090505;

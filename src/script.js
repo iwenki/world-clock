@@ -78,7 +78,7 @@ function updateCity(event) {
                   "dddd, MMMM Do, YYYY"
                 )}</p>
               </div>
-               <div class="col">
+               <div class="col countryinfo">
                 <img class="flags"src="images/usa.png"/>
               </div>
             </div>
@@ -103,7 +103,7 @@ function updateCity(event) {
                   "dddd, MMMM Do, YYYY"
                 )}</p>
               </div>
-               <div class="col">
+               <div class="col countryinfo">
                 <img class="flags"src="images/brazil.png"/>
               </div>
             </div>
@@ -129,7 +129,7 @@ function updateCity(event) {
                   "dddd, MMMM Do, YYYY"
                 )}</p>
               </div>
-               <div class="col">
+               <div class="col countryinfo">
                 <img class="flags"src="images/nepal.png"/>
               </div>
             </div>
@@ -155,7 +155,7 @@ function updateCity(event) {
                   "dddd, MMMM Do, YYYY"
                 )}</p>
               </div>
-               <div class="col">
+               <div class="col countryinfo">
                 <img class="flags"src="images/australia.png"/>
               </div>
             </div>
@@ -181,7 +181,7 @@ function updateCity(event) {
                   "dddd, MMMM Do, YYYY"
                 )}</p>
               </div>
-               <div class="col">
+               <div class="col countryinfo">
                 <img class="flags"src="images/uae.png"/>
               </div>
             </div>
@@ -226,7 +226,7 @@ function updateCity(event) {
                 <span class="time"></span>
                 <p class="card-text date"></p>
               </div>
-              <div class="col">
+              <div class="col countryinfo">
                 <img class="flags"src="images/spain.png"/>
               </div>
             </div>
@@ -245,7 +245,7 @@ function updateCity(event) {
                 <span class="time"></span>
                 <p class="card-text date"></p>
               </div>
-              <div class="col">
+              <div class="col countryinfo">
                 <img class="flags"src="images/usa.png"/>
               </div>
             </div>
@@ -263,7 +263,7 @@ function updateCity(event) {
                 <span class="time"></span>
                 <p class="card-text date"></p>
               </div>
-              <div class="col">
+              <div class="col countryinfo">
                 <img class="flags"src="images/guatemala.png"/>
               </div>
             </div>
@@ -281,7 +281,7 @@ function updateCity(event) {
                 <span class="time"></span>
                 <p class="card-text date"></p>
               </div>
-              <div class="col">
+              <div class="col countryinfo">
                 <img class="flags"src="images/koreasouth.png"/>
               </div>
             </div>
@@ -299,7 +299,7 @@ function updateCity(event) {
                 <span class="time"></span>
                 <p class="card-text date"></p>
               </div>
-              <div class="col">
+              <div class="col countryinfo">
                 <img class="flags"src="images/kenya.png"/>
               </div>
             </div>
