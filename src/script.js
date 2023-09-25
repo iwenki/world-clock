@@ -53,17 +53,17 @@ function updateTimes() {
     );
     kenyaDateElement.innerHTML = kenyaTime.format("dddd, MMMM Do, YYYY");
   }
- 
 }
 function updateCity(event) {
-    let timeZone = event.target.value;
-    if(timeZone === "local") {
-      timeZone = moment.tz.guess();}
-    let cityName = timeZone.replace("_", " ").split("/")[1];
-    let cityTime = moment().tz(timeZone);
-    let cities = document.querySelector("#indexCities");
-    if (timeZone === "America/Denver" || timeZone=== "America/Los_Angeles") {
-      cities.innerHTML = `<div
+  let timeZone = event.target.value;
+  if (timeZone === "local") {
+    timeZone = moment.tz.guess();
+  }
+  let cityName = timeZone.replace("_", " ").split("/")[1];
+  let cityTime = moment().tz(timeZone);
+  let cities = document.querySelector("#indexCities");
+  if (timeZone === "America/Denver" || timeZone === "America/Los_Angeles") {
+    cities.innerHTML = `<div
           class="card text-bg mb-3 index-card"
           style="max-width: 36rem"
         >
@@ -85,10 +85,8 @@ function updateCity(event) {
           </div>
         </div>
               `;
-    } else if(
-      timeZone==="America/Sao_Paulo"
-    ){
-      cities.innerHTML = `<div
+  } else if (timeZone === "America/Sao_Paulo") {
+    cities.innerHTML = `<div
           class="card text-bg mb-3 index-card"
           style="max-width: 36rem"
         >
@@ -110,11 +108,8 @@ function updateCity(event) {
           </div>
         </div>
               `;
-    }
-    else if(
-      timeZone==="Asia/Kathmandu"
-    ){
-      cities.innerHTML = `<div
+  } else if (timeZone === "Asia/Kathmandu") {
+    cities.innerHTML = `<div
           class="card text-bg mb-3 index-card"
           style="max-width: 36rem"
         >
@@ -136,11 +131,8 @@ function updateCity(event) {
           </div>
         </div>
               `;
-    }
-    else if(
-      timeZone==="Australia/Perth"
-    ){
-     cities.innerHTML = `<div
+  } else if (timeZone === "Australia/Perth") {
+    cities.innerHTML = `<div
           class="card text-bg mb-3 index-card"
           style="max-width: 36rem"
         >
@@ -161,12 +153,9 @@ function updateCity(event) {
             </div>
           </div>
         </div>
-              `; 
-    }
-    else if(
-      timeZone==="Asia/Dubai"
-    ){
-      cities.innerHTML = `<div
+              `;
+  } else if (timeZone === "Asia/Dubai") {
+    cities.innerHTML = `<div
           class="card text-bg mb-3 index-card"
           style="max-width: 36rem"
         >
@@ -187,11 +176,55 @@ function updateCity(event) {
             </div>
           </div>
         </div>
-              `; 
-    }
-    else if(
-      timeZone.length>0) {
-      cities.innerHTML = `<div
+              `;
+  } else if (timeZone === "Africa/Bamako") {
+    cities.innerHTML = `<div
+          class="card text-bg mb-3 index-card"
+          style="max-width: 36rem"
+        >
+          <div class="card-header city-name">${cityName} </div>
+          <div class="card-body">
+            <div class="row">
+              <div class="col">
+                <span class="time"> ${cityTime.format(
+                  "hh:mm [<small>]A[</small>]"
+                )}</span>
+                <p class="card-text date">${cityTime.format(
+                  "dddd, MMMM Do, YYYY"
+                )}</p>
+              </div>
+               <div class="col countryinfo">
+                <img class="flags"src="images/mali.png"/>
+              </div>
+            </div>
+          </div>
+        </div>
+              `;
+  } else if (timeZone === "Asia/Krasnoyarsk") {
+    cities.innerHTML = `<div
+          class="card text-bg mb-3 index-card"
+          style="max-width: 36rem"
+        >
+          <div class="card-header city-name">${cityName} </div>
+          <div class="card-body">
+            <div class="row">
+              <div class="col">
+                <span class="time"> ${cityTime.format(
+                  "hh:mm [<small>]A[</small>]"
+                )}</span>
+                <p class="card-text date">${cityTime.format(
+                  "dddd, MMMM Do, YYYY"
+                )}</p>
+              </div>
+               <div class="col countryinfo">
+                <img class="flags" src="images/russia.png"/>
+              </div>
+            </div>
+          </div>
+        </div>
+              `;
+  }else if (timeZone.length > 0) {
+    cities.innerHTML = `<div
           class="card text-bg mb-3 index-card"
           style="max-width: 36rem"
         >
@@ -211,10 +244,9 @@ function updateCity(event) {
             </div>
           </div>
         </div>
-              `; 
-    }
-    else {
-      cities.innerHTML = `<div
+              `;
+  }  else {
+    cities.innerHTML = `<div
           class="card text-bg mb-3 index-card"
           style="max-width: 36rem"
           id="spain"
@@ -305,8 +337,8 @@ function updateCity(event) {
             </div>
           </div>
         </div>`;
-    }
   }
+}
 
 setInterval(updateTimes, 1);
 updateTimes();
